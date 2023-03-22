@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broker.Core", "Broker.Core\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broker.Worker", "Broker.Worker\Broker.Worker.csproj", "{A86B2F53-F975-461A-A674-B03C371F14A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broker.Abstractions", "Broker.Abstractions\Broker.Abstractions.csproj", "{6162E63E-6641-4D6E-B7BF-98F209A4035E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broker.Configuration", "Broker.Configuration\Broker.Configuration.csproj", "{7D8A6CB7-FB66-44EA-8743-F3C598C7DCB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,5 +32,13 @@ Global
 		{A86B2F53-F975-461A-A674-B03C371F14A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A86B2F53-F975-461A-A674-B03C371F14A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A86B2F53-F975-461A-A674-B03C371F14A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6162E63E-6641-4D6E-B7BF-98F209A4035E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6162E63E-6641-4D6E-B7BF-98F209A4035E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6162E63E-6641-4D6E-B7BF-98F209A4035E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6162E63E-6641-4D6E-B7BF-98F209A4035E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D8A6CB7-FB66-44EA-8743-F3C598C7DCB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D8A6CB7-FB66-44EA-8743-F3C598C7DCB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D8A6CB7-FB66-44EA-8743-F3C598C7DCB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D8A6CB7-FB66-44EA-8743-F3C598C7DCB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
