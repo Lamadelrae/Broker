@@ -1,25 +1,22 @@
 using System.Text.Json;
 using Azure.Messaging.ServiceBus;
 using Broker.Core.Interfaces;
-using MediatR;
 using Microsoft.Extensions.Configuration;
 
 namespace Broker.Core;
 
 public class Broker : IBroker
 {
-    private readonly IMediator _mediator;
     private readonly ServiceBusClient _client;
 
-    public Broker(IMediator mediator, IConfiguration configuration)
+    public Broker(IConfiguration configuration)
     {
-        _mediator = mediator;
-        _client = new ServiceBusClient(configuration.GetConnectionString("sql"));
+        _client = new ServiceBusClient(configuration.GetConnectionString("serviceBus"));
     }
 
-    public Task Receive<TEvent, TCommand>(string topic, string subscription) where TEvent : IEvent<TCommand> where TCommand : IBaseRequest
+    public Task Receive<TEvent, TCommand>(string queue) where TEvent : IEvent<TCommand> where TCommand : class
     {
-        var processor = _client.CreateProcessor(topic, subscription);
+        var processor = _client.CreateProcessor(queue);
         processor.ProcessMessageAsync += async (messageEvent) =>
         {
             var json = messageEvent.Message.Body.ToString();
@@ -30,7 +27,7 @@ public class Broker : IBroker
             }
 
             var command = @event.ToCommand();
-            await _mediator.Send(command);
+            Console.WriteLine("{@command}", command);
         };
 
         return processor.StartProcessingAsync();

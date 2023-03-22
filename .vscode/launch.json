@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Broker.Console/bin/Debug/net7.0/Broker.Console.dll",
+            "program": "${workspaceFolder}/Broker.Worker/bin/Debug/net7.0/Broker.Worker.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Broker.Console",
+            "cwd": "${workspaceFolder}/Broker.Worker",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
