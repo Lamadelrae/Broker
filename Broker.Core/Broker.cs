@@ -1,33 +1,38 @@
+using System.Text.Json;
 using Azure.Messaging.ServiceBus;
+using Broker.Core.Interfaces;
+using MediatR;
+using Microsoft.Extensions.Configuration;
 
-public interface IBroker
-{
-    public Task Receive<TEvent>(string topic, string subscription);
-}
+namespace Broker.Core;
 
 public class Broker : IBroker
 {
+    private readonly IMediator _mediator;
     private readonly ServiceBusClient _client;
 
-    public Broker(string connectionString)
+    public Broker(IMediator mediator, IConfiguration configuration)
     {
-        _client = new ServiceBusClient(connectionString);
+        _mediator = mediator;
+        _client = new ServiceBusClient(configuration.GetConnectionString("sql"));
     }
 
-    public async Task Receive<TEvent>(string topic, string subscription)
+    public Task Receive<TEvent, TCommand>(string topic, string subscription) where TEvent : IEvent<TCommand> where TCommand : IBaseRequest
     {
         var processor = _client.CreateProcessor(topic, subscription);
-        processor.ProcessMessageAsync += async (messageArgs) =>
+        processor.ProcessMessageAsync += async (messageEvent) =>
         {
-            Console.WriteLine(messageArgs.Message?.Body.ToString());
-            await messageArgs.CompleteMessageAsync(messageArgs.Message);
-        };
-        
-        processor.ProcessErrorAsync += async (messageArgs) =>
-        {
-            Console.WriteLine(messageArgs.Exception.Message);
+            var json = messageEvent.Message.Body.ToString();
+            var @event = JsonSerializer.Deserialize<TEvent>(json);
+            if(@event == null)
+            {
+                return;
+            }
+
+            var command = @event.ToCommand();
+            await _mediator.Send(command);
         };
 
-        await processor.StartProcessingAsync();
+        return processor.StartProcessingAsync();
     }
 }
