@@ -1,4 +1,3 @@
-
 using Broker.Abstractions;
 using Broker.Configuration.Options;
 using Microsoft.Extensions.DependencyInjection;

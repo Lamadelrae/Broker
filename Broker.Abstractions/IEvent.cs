@@ -10,4 +10,3 @@ public interface IIntegrationEvent<TCommand> : IEvent where TCommand : class, IB
 {
     TCommand ToCommand();
 }
-
