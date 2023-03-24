@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broker.Abstractions", "Brok
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broker.Configuration", "Broker.Configuration\Broker.Configuration.csproj", "{7D8A6CB7-FB66-44EA-8743-F3C598C7DCB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broker.ServiceBus", "Broker.ServiceBus\Broker.ServiceBus.csproj", "{1A623384-0CC9-4256-8982-F1451C9FF413}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broker.Consumer", "Broker.Consumer\Broker.Consumer.csproj", "{AE7E4AEE-6EA4-4D86-86A9-EB2BD4F55B73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,13 @@ Global
 		{7D8A6CB7-FB66-44EA-8743-F3C598C7DCB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D8A6CB7-FB66-44EA-8743-F3C598C7DCB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D8A6CB7-FB66-44EA-8743-F3C598C7DCB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A623384-0CC9-4256-8982-F1451C9FF413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A623384-0CC9-4256-8982-F1451C9FF413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A623384-0CC9-4256-8982-F1451C9FF413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A623384-0CC9-4256-8982-F1451C9FF413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE7E4AEE-6EA4-4D86-86A9-EB2BD4F55B73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE7E4AEE-6EA4-4D86-86A9-EB2BD4F55B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE7E4AEE-6EA4-4D86-86A9-EB2BD4F55B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE7E4AEE-6EA4-4D86-86A9-EB2BD4F55B73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
