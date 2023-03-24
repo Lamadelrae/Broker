@@ -1,3 +1,5 @@
+namespace Broker.Abstractions;
+
 public interface IBroker { }
 
 public interface IBroker<TBroker> where TBroker : class, IBroker

@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broker.Core", "Broker.Core\Broker.Core.csproj", "{2B2DC03B-3AAD-46C5-949B-7959A6D7BD6F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broker.Worker", "Broker.Worker\Broker.Worker.csproj", "{A86B2F53-F975-461A-A674-B03C371F14A1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broker.Abstractions", "Broker.Abstractions\Broker.Abstractions.csproj", "{6162E63E-6641-4D6E-B7BF-98F209A4035E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Broker.Configuration", "Broker.Configuration\Broker.Configuration.csproj", "{7D8A6CB7-FB66-44EA-8743-F3C598C7DCB6}"

@@ -1,3 +1,5 @@
+namespace Broker.Abstractions;
+
 public interface IEvent { }
 
 public interface IDomainEvent : IEvent { }
